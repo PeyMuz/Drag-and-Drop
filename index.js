@@ -1,14 +1,55 @@
 const cards = document.querySelectorAll(".card");
 const lists = document.querySelectorAll(".list");
 const addTaskBtn = document.getElementById("add-task-btn");
-const taskInput = document.getElementById("task-input");
+const taskInput = document.getElementById("text-input");
 const todoList = document.getElementById("list1");
+const del = document.querySelectorAll(".del-btn");
 
+//for the delete button
+for (const button of del){
+button.addEventListener("click",function(){
+    this.parentElement.remove();
+});
+}
 
 //for the input
 addTaskBtn.addEventListener("click", addTask);
 
+function addTask() {
+    const taskText = taskInput.value.trim();
+   
+    if (taskText=="") {
+      return;
+    }
 
+    const newCard = document.createElement("div");
+
+    newCard.classList.add("card");
+    newCard.setAttribute("draggable", true);
+    newCard.id = "card" + Date.now();
+    newCard.textContent = taskText; 
+    newCard.innerHTML = `<span>${taskText}</span>
+                         <button class="del-btn">Delete</button>`;
+
+
+    todoList.appendChild(newCard);
+
+    newCard.addEventListener("dragstart", dragStart );
+    newCard.addEventListener("dragend", dragEnd);
+   
+    const del = document.querySelectorAll(".del-btn");
+
+        //for the delete button
+        for (const button of del){
+        button.addEventListener("click",function(){
+            this.parentElement.remove();
+        });
+        }
+   
+
+    taskInput.value="";
+
+}
 
 
 
@@ -16,6 +57,7 @@ addTaskBtn.addEventListener("click", addTask);
 for (const card of cards) {
     card.addEventListener("dragstart", dragStart);
     card.addEventListener("dragend", dragEnd);
+
 }
 
 
