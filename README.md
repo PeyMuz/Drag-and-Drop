@@ -14,15 +14,7 @@ This project allows users to create tasks, move them between different lists usi
   - In Progress
   - Done
 - Simple and clean user interface
-- Responsive layout
-
-## Projects Structured
-Kanban-Board/
-│
-├── index.html
-├── style.css
-├── index.js
-└── README.md
+- Responsive design
 
 ## Technologies Used
 
@@ -36,19 +28,70 @@ Kanban-Board/
 
 ### Add a Task
 
-Type a task into the input field and click the **Add Task** button.
+Enter a task in the input field and click the **Add Task** button.
 
 The new task will automatically be added to the **To Do** list.
 
 ### Delete a Task
 
-Each task has a **Delete** button. Clicking the button removes the task from the board.
+Each task has a **Delete** button.
+
+Clicking the button removes the selected task from the board.
 
 ### Drag and Drop
 
-Tasks can be dragged from one list to another.
+Tasks can be dragged and moved between the different lists.
 
 For example:
 
-```text
 To Do → In Progress → Done
+
+This allows users to easily track the progress of their tasks.
+
+## Project Structure
+
+Drag-and-Drop/
+│
+├── index.html
+├── style.css
+├── index.js
+└── README.md
+
+## What I Learned
+
+While building this project, I practiced:
+
+- Selecting elements using `querySelector()` and `querySelectorAll()`
+- Using `addEventListener()`
+- Creating elements using `createElement()`
+- Using `innerHTML`
+- Using `appendChild()`
+- Using `classList`
+- Handling user input
+- Creating dynamic elements
+- Removing elements from the DOM
+- Using the Drag and Drop API
+- Using `dataTransfer`
+- Handling drag events
+- Working with dynamically created cards
+
+## Future Improvements
+
+Possible improvements for this project include:
+
+- Save tasks using Local Storage
+- Edit existing tasks
+- Add task priorities
+- Add due dates
+- Add task categories
+- Add search and filter functionality
+
+## Author
+
+**Kylle Bantog**
+
+Computer Engineering Student
+
+---
+
+Made with HTML, CSS, and JavaScript.
